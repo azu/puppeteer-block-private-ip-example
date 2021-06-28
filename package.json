@@ -27,8 +27,9 @@
     "src/"
   ],
   "scripts": {
-    "start": "npm-run-all 'start:*'",
-    "start:private": "http-server ./private --port 8089 --ssl --key ./localhost+2-key.pem --cert ./localhost+2.pem",
+    "start": "npm-run-all -p 'start:*'",
+    "start:private": "http-server ./private --port 8089",
+    "start:public": "http-server ./public --port 8080",
     "main": "ts-node src/index.ts",
     "test": "mocha \"test/**/*.ts\"",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
